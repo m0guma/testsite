@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quest｜常識を作り出す</title>
+  
+  <!-- 🌟ヘッダーとフッターのJSファイルを読み込む -->
+  <script src="header.js" defer></script>
+  <script src="footer.js" defer></script>
+  
+  <style>
+    /* --------------------------------------------------
+     * 📌 フッターを絶対に最下部へ押し出すための必須CSS
+     * -------------------------------------------------- */
+    html, body {
+      height: 100%; /* 画面全体の高さを100%確保する */
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column; /* 上から下へ縦並びにする設定 */
+      min-height: 100vh;      /* 画面の縦幅いっぱいの最低高さを保証 */
+      
+      /* ガラス背景が綺麗に見えるグラデーション（お好みで変更してください） */
+      background: linear-gradient(135deg, #ffffff, #ffffff); 
+    }
+
+    /* 🌟メイン領域を引き伸ばす */
+    main {
+      flex: 1;                  /* 画面の余った縦スペースをすべて吸い尽くして引き伸ばす */
+      padding: 120px 40px 60px; /* 上のヘッダーに被らないように上の余白をあける */
+      box-sizing: border-box;
+      color: #333333;           /* 文字を暗い灰色に */
+
+      body {
+      display: flex;
+      flex-direction: column; 
+      min-height: 100vh;      
+      
+      /* 🌟【重要】背景画像の指定（画像ファイルのパスを記述） */
+      background-image: url("images/bg.png"); 
+      
+      /* 📌 画像を画面いっぱいに綺麗にフィットさせるための3つの設定 */
+      background-size: cover;       /* 画像を隙間なく画面全体に広げる */
+      background-position: center;  /* 画像の中心が画面の真ん中に来るようにする */
+      background-attachment: fixed; /* 🌟スクロールしても背景画像は動かさず固定する（超おすすめ） */
+      
+      /* 万が一、画像が読み込めなかった時のための予備の背景色（暗めの色） */
+      background-color: #0f172a; 
+    }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 共通ヘッダー（画面最上部に固定） -->
+  <my-header></my-header>
+
+  <!-- 2. メインコンテンツ領域（これがフッターを下に押し下げます） -->
+  <main>
+    <h1>トップページ</h1>
+    <p>現在、サービス調整中です。</p>
+    <p>サービス公開まで今しばらくお待ちください。</p>
+  </main>
+
+  <!-- 3. 共通フッター（ページの最下部に自然に配置） -->
+  <my-footer></my-footer>
+
+</body>
+</html>
